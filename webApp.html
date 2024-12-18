@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Horse App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .horse-container, .hay-container {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #aaa;
+            position: relative;
+        }
+        .horse {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hay {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            cursor: grab;
+        }
+        #horseImage {
+            transition: 0.5s;
+        }
+        .smiling-horse {
+            content: url('https://i.pinimg.com/736x/3d/f8/b7/3df8b76aa13c469802fbf4319eeda01b.jpg'); /* smiling horse image */
+        }
+    </style>
+</head>
+<body>
+    <h1>Drag the Hay to the Horse</h1>
+    <div class="container">
+        <div class="hay-container" id="hayContainer">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWBROoI1veENujREWa7eS66zVYp1zyI5qRtuEq5tUJhNi7ErFi-A9WFgW5xjFe8l6g3Mk&usqp=CAU" id="hay" class="hay" draggable="true" ondragstart="drag(event)">
+        </div>
+
+        <div class="horse-container" id="horseContainer" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="https://st2.depositphotos.com/1006137/8065/i/950/depositphotos_80652276-stock-photo-funny-horse-portrait.jpg" id="horseImage" class="horse" alt="Horse">
+        </div>
+    </div>
+
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var hay = document.getElementById(event.dataTransfer.getData("text"));
+            var horseImage = document.getElementById("horseImage");
+
+            // Change the horse image to a smiling horse
+            horseImage.classList.add("smiling-horse");
+
+            // Optionally hide the hay after it has been dropped
+            hay.style.display = "none";
+        }
+    </script>
+</body>
+</html>

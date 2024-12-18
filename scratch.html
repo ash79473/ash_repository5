@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch Page</title>
+    <link rel="stylesheet" href="scratchstyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <a href="startbootstrap-resume-gh-pages/index.html"> Resume</a>  |  
+        <a href="webApp.html"> WebApp :D</a>
+        <h1 id="resume" class="q1">Best Horse Picture:</h1>
+        <img src="https://i.redd.it/fni129xv9kyd1.jpeg" alt="Horsie">
+        <br>
+        <ul class="q4">
+            <h1 class="q2">
+                <br>
+                Why is this the best horse picture?
+                <li class="q3">
+                    It is pretty goofy
+                    <ul class="q3">
+                        - (He does a silly face for the picture)
+                    </ul>
+                </li>
+                <li class="q3">
+                    Awesome Horse!
+                </li>
+                <br>
+            </h1>
+        </ul>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/GSAyJRAYilA" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>   
+    </header>
+    <br>
+    <!-- Performance Metrics Section -->
+    <div class="performance-metrics">
+        <a class="q7">Horse Performance Metrics</a>
+        <div style="width: 80%; margin: 20px auto;">
+            <canvas id="horseChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+    <br>
+    <h1 class="end">
+        <a href="#resume">Back to top</a>
+    </h1>
+    <script class="q6">
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('horseChart').getContext('2d');
+
+            const horseData = {
+                labels: ['Speed', 'Jump Height', 'Endurance', 'Strength'],
+                datasets: [{
+                    label: 'Horse Performance Metrics',
+                    data: [70, 85, 90, 80],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(153, 102, 255, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            const config = {
+                type: 'bar',
+                data: horseData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            };
+
+            const horseChart = new Chart(ctx, config);
+        });
+    </script>
+</body>
+</html>

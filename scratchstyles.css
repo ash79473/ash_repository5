@@ -1,0 +1,87 @@
+.q1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 500%;
+    background-color: green;
+    color: rgb(220, 254, 220);
+}
+body{
+    background-color: rgb(213, 199, 187);
+}
+img{
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    border: solid green 15px;
+}
+
+/* 
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh; 
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    max-width: 50%;
+} */
+
+}
+
+.q2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    margin-top: 45%;
+}
+.q3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: green;
+    font-size: large;
+}
+.q4{
+    background-color: rgb(220, 254, 220);
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.end{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10%;
+    font-size: large;
+    color: blue;
+
+}
+.q5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    color: blue;
+}
+.q6{
+    margin-top: 70%;
+}
+iframe {
+    display: block; /* Ensures the iframe does not overlap */
+    margin: 50px auto; /* Center the iframe and add spacing */
+}
+
+.performance-metrics {
+    text-align: center; /* Center the metrics text */
+    margin-top: px; /* Add space above the performance section */
+}
+
+.q7 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    font-weight: bold;
+    display: block; /* Ensures the text is on a new line */
+    margin-top: 20px;
+}
